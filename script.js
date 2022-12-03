@@ -23,10 +23,10 @@ tasks.forEach(task => {
         const bigTask = task.cloneNode(true);
         bigTask.classList.add('big-tasks');
         meterEmpty.append(bigTask);
-        setTimeout(removeClass, 3000);
-        function removeClass() {
-            bigTask.classList.remove('tasks');
-        }
+        // setTimeout(removeClass, 3000);
+        // function removeClass() {
+        //     bigTask.classList.remove('tasks');
+        // }
         
         
 
