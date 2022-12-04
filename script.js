@@ -20,17 +20,31 @@ meterFill.style.height = fillAmount +'px';
 tasks.forEach(task => {
     task.addEventListener('click', () => {
        
-        const bigTask = task.cloneNode(true);
-        bigTask.classList.add('big-tasks');
-        meterEmpty.append(bigTask);
+        const bigTasks = task.cloneNode(true);
+        bigTasks.classList.add('big-tasks');
+        meterEmpty.append(bigTasks);
+
+        const miniTask1 = task.cloneNode(true);
+        const miniTask2 = task.cloneNode(true);
+        const miniTask3 = task.cloneNode(true);
+        const miniTask4 = task.cloneNode(true);
+        miniTask1.classList.add('mini-tasks');
+        miniTask2.classList.add('mini-tasks');
+        miniTask3.classList.add('mini-tasks');
+        miniTask4.classList.add('mini-tasks');
+        emoCon.append(miniTask1);
+        emoCon.append(miniTask2);
+        emoCon.append(miniTask3);
+        emoCon.append(miniTask4);
+
         // setTimeout(removeClass, 3000);
         // function removeClass() {
-        //     bigTask.classList.remove('tasks');
+        //     bigTasks.classList.remove('tasks');
         // }
         
         
 
-        // const littleTask = task.cloneNode(true);
+        
         
     })
 });
