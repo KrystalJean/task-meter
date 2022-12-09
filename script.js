@@ -91,7 +91,19 @@ tasks.forEach(task => {
                         miniTasks[i].style.background = 'transparent';
                        
                         miniTasks[i].style.filter = 'sepia(0%)';
-                        miniTasks[i].innerHTML = '+💕'
+                        miniTasks[i].innerHTML = '+❤️';
+                        miniTasks[i].classList.add('emoji');
+                        function fire() {
+                            miniTasks[i].innerHTML = '&nbsp; ❤️';
+                            // miniTasks[i].style.transitionDuration = '5s';
+                            // miniTasks[i].style.position = 'absolute'
+                            // miniTasks[i].style.top = '0';
+
+                        }
+                        setTimeout(fire,500)
+                        
+
+                        
                     }
                 }
 
