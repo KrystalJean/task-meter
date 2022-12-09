@@ -9,6 +9,7 @@ const tasks = document.querySelectorAll('.tasks');
 
 
 
+
 // const tasksPerDay = 4;
 const todaysTasks = [];
 
@@ -41,9 +42,10 @@ tasks.forEach(task => {
 
         const miniOneText = document.createElement("p");
         miniOneText.classList.add('big-task-text');
+        miniOneText.classList.add('mini-task-one');
         miniOneText.innerText = "gather & sort";
         bigTasks.appendChild(miniOneText);
-             
+
 
 
         const miniTask1 = task.cloneNode(true);
@@ -61,43 +63,66 @@ tasks.forEach(task => {
         emoCon.append(miniTask3);
         emoCon.append(miniTask4);
 
-        // setTimeout(removeClass, 3000);
-        // function removeClass() {
-        //     bigTasks.classList.remove('tasks');
-        // }
+        const miniTasks = document.querySelectorAll('.mini-tasks');
+        console.log(miniTasks);
+
+        const texts = document.querySelectorAll('.big-task-text');
+        
+        texts.forEach(text => {
+            text.addEventListener('click', () => {
+                console.log('heyyyo')
+                text.style.backgroundColor = 'transparent';
+                text.classList.add('strike');
+                // console.log(text.clientTop);
+                // console.log(text.clientLeft);
+                // console.log(text.screenX);
+                
+
+                for(let i = 0; i < miniTasks.length; i++) {
+
+                    const textX = window.scrollX + text.getBoundingClientRect().top;
+                    const iconX = window.scrollX + miniTasks[i].getBoundingClientRect().top
+                    // console.log(textX)
+                    // console.log(Math.floor(textX))
+                    // console.log(iconX);
+                    // console.log(Math.floor(iconX)-1);
+
+                    if(Math.floor(textX) === Math.floor(iconX) -1) {
+                        miniTasks[i].style.background = 'transparent';
+                       
+                        miniTasks[i].style.filter = 'sepia(0%)';
+                        miniTasks[i].innerHTML = '+💕'
+                    }
+                }
+
+
+                
+    
+            })
+        });
+
+
+    }) //end of choices click event
+}); // end of choices for each
+// 
 
 
 
 
 
-        // switch (task) {
-        //     case task[0]:
-        //       test.innerHTML = "I have class1";
-        //       break;
-        //     case "class2":
-        //       test.innerHTML = "I have class2";
-        //       break;
-        //     case "class3":
-        //       test.innerHTML = "I have class3";
-        //       break;
-        //     case "class4":
-        //       test.innerHTML = "I have class4";
-        //       break;
-        //     default:
-        //       test.innerHTML = "";
-        //   }
+
+// function checkOff() {
+    
+//     miniTasks.forEach(miniTask => {
+//         miniTask.addEventListener('click', () => {
+//             miniTask.classList.add('.checkmark')
 
 
 
+//         })
+//     });
+// }  //end of check off function
 
-    })
-});
-console.log(tasks)
-
-
-
-
-
-
-
+// checkOff();
+// // setTimeout(checkOff(), 3000);
 
