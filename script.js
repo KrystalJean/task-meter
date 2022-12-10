@@ -23,6 +23,7 @@ tasks.forEach(task => {
 
         const bigTasks = task.cloneNode(true);
         bigTasks.classList.add('big-tasks');
+        bigTasks.classList.remove('tasks');
         meterEmpty.append(bigTasks);
 
         const miniFourText = document.createElement("p");
@@ -54,9 +55,13 @@ tasks.forEach(task => {
         const miniTask4 = task.cloneNode(true);
 
         miniTask1.classList.add('mini-tasks');
+        miniTask1.classList.remove('tasks');
         miniTask2.classList.add('mini-tasks');
+        miniTask2.classList.remove('tasks');
         miniTask3.classList.add('mini-tasks');
+        miniTask3.classList.remove('tasks');
         miniTask4.classList.add('mini-tasks');
+        miniTask4.classList.remove('tasks');
 
         emoCon.append(miniTask1);
         emoCon.append(miniTask2);
@@ -73,9 +78,6 @@ tasks.forEach(task => {
                 console.log('heyyyo')
                 text.style.backgroundColor = 'transparent';
                 text.classList.add('strike');
-                // console.log(text.clientTop);
-                // console.log(text.clientLeft);
-                // console.log(text.screenX);
                 
 
                 for(let i = 0; i < miniTasks.length; i++) {
@@ -93,14 +95,33 @@ tasks.forEach(task => {
                         miniTasks[i].style.filter = 'sepia(0%)';
                         miniTasks[i].innerHTML = '+❤️';
                         miniTasks[i].classList.add('emoji');
+
+
+
+                        // function emojiFloat() {
+                        //     const hearts = miniTasks[i].innerHTML;
+                        //     const emojis = document.querySelectorAll('.emoji');
+                        //     emojis.forEach(emoji => {
+                        //         // emoji.style.zIndex = '10';
+                        //         emoji.style.cssText = `
+                        //         position: fixed;
+                        //         top: 0;
+
+                        //         `;
+                                
+                        //     })
+                        // }
+
+                        // emojiFloat();
+
                         function fire() {
                             miniTasks[i].innerHTML = '&nbsp; ❤️';
-                            // miniTasks[i].style.transitionDuration = '5s';
-                            // miniTasks[i].style.position = 'absolute'
-                            // miniTasks[i].style.top = '0';
 
                         }
-                        setTimeout(fire,500)
+                        setTimeout(fire, 300);
+
+                        
+                        
                         
 
                         
