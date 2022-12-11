@@ -78,6 +78,16 @@ tasks.forEach(task => {
                 console.log('heyyyo')
                 text.style.backgroundColor = 'transparent';
                 text.classList.add('strike');
+
+
+                function disappear() {
+                    text.classList.add('remove-text');
+                }
+                setTimeout(disappear, 300);
+
+                
+                // text.classList.add('remove-text');
+
                 
 
                 for(let i = 0; i < miniTasks.length; i++) {
@@ -89,7 +99,7 @@ tasks.forEach(task => {
                     // console.log(iconX);
                     // console.log(Math.floor(iconX)-1);
 
-                    if(Math.floor(textX) === Math.floor(iconX) -1) {
+                    if(Math.floor(textX) === Math.floor(iconX) -1 || Math.floor(textX) === Math.floor(iconX) +1 || Math.floor(textX) === Math.floor(iconX)) {
                         miniTasks[i].style.background = 'transparent';
                        
                         miniTasks[i].style.filter = 'sepia(0%)';

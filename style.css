@@ -68,17 +68,43 @@ body {
     left: 0;
 }
 
-/* .day {
-    height: 800px;
-    width: 1000px;
-    background-color: aquamarine;
+.calendar {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    grid-column-gap: 12px;
-    grid-row-gap: 12px;
+    place-content: center;
+}
 
-} */
+.flex {
+    display: flex;
+}
+
+h4 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    padding: 4px;
+    /* border: rgb(86, 86, 86) solid 1px; */
+}
+
+.grid-item {
+    height: 1px;
+    width: 1px;
+    font-size: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    margin: 0;
+    place-content: center;
+    color: black;
+}
+
+
 
 .emotions {
     width: 40px;
@@ -100,7 +126,7 @@ body {
     width: 100%;
     height: 90%;
     align-content: flex-start;
-    margin-left: 1%;
+    /* margin-left: 1%; */
 
 }
 
@@ -115,25 +141,30 @@ body {
     transition: box-shadow 1s;
 }
 
+/* .tasks:hover {
+background-image: none;
+} */
+
 .tasks:active {
-    box-shadow: #000 0px 0px; 
+    box-shadow: #000 0px 0px;
     transition-duration: 100ms;
 }
 
 
-.tasks img {
+/* .tasks img {
     width: 100%;
     border-radius: 5px;
     border: solid #000 1px;
-}
+} */
 
 
 
 .big-tasks {
     background-color: transparent;
     width: 100%;
-    height: 25%;
+    height: 160px;
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -147,7 +178,7 @@ body {
 
 .big-tasks p {
     font-size: 18px;
-    height: 25%;
+    height: 41px;
     border-bottom: #000 solid 1px;
     background-color: #333;
     color: rgb(238, 238, 238);
@@ -157,6 +188,8 @@ body {
         1px 1px 0 #000;
     display: grid;
     place-items: center;
+    padding: 0;
+    margin: 0;
 
 }
 
@@ -168,6 +201,11 @@ body {
     text-decoration: line-through;
 }
 
+.remove-text {
+    opacity: 0;
+    transition-duration: 3s;
+}
+
 .mini-tasks {
     background-color: transparent;
     width: 100%;
@@ -175,7 +213,7 @@ body {
     margin: 0;
     padding: 0;
     border-radius: 5px;
-    border-bottom: rgba(0, 0, 0, 0.185) solid 1px;
+    /* border-bottom: rgba(0, 0, 0, 0.185) solid 1px; */
     filter: sepia(.8);
     display: grid;
     place-content: center left;
@@ -183,23 +221,12 @@ body {
 
 h2#emoji {
     opacity: 0;
+    padding: 0;
+    margin-bottom: 1px;
 }
 
 .emoji {
     font-size: 20px;
     visibility: hidden;
     transition: 3s;
-}
-
-/* .mini-tasks img {
-    height: 40px;
-    
-} */
-
-#choice1 {
-    background-image: url(./coding.jpeg);
-}
-
-.checkmark {
-    display: none;
 }
